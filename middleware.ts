@@ -5,7 +5,7 @@ import { authMiddleware, redirectToSignIn } from '@clerk/nextjs';
 // for more information about configuring your Middleware
 export default authMiddleware({
   // Allow signed out users to access the specified routes:
-  publicRoutes: ['/', 'api/webhooks(.*)'],
+  publicRoutes: ['/', '/api/webhooks/clerk'],
   afterAuth(auth, req, evt) {
     // Handle users who aren't authenticated
     if (!auth.userId && !auth.isPublicRoute) {
